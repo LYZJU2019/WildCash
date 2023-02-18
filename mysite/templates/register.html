@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WildCash</title>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="{% url 'wildcash:register' %}" method="post">
+        {% csrf_token %}
+        Email address or phone number: <input type="text" name="username" placeholder="Email or phone number"> </br>
+        Password: <input type="password" name="password" placeholder="Password"> </br>
+        Last Name: <input type="name" name="last_name" placeholder="Last Name">
+        First Name: <input type="name" name="first_name" placeholder="First Name"> </br>
+        Date of birth: <input type="date" name="birthday" placeholder="Date of birth"> </br>
+        <input type="submit" value="Register">
+    </form>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    {% if show_login %}
+        <a href="{% url 'wildcash:login' %}">Log in</a>
+    {% endif %}
+</body>
+</html>

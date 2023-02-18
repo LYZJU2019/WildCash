@@ -2,11 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My site</title>
+    <title>WildCash</title>
     <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
 </head>
 <body>
-    <h1>My site</h1>
-    <p>Welcome to my site!</p>
+    <h1>WildCash</h1>
+    <p>Welcome to WildCash, an epic project that revolutionize the cryptocurrency world!</p>
+    <p>Please register or log in first!</p>
+    <a href="{% url 'wildcash:register' %}">Register</a>
+    <a href="{% url 'wildcash:login' %}">Log in</a>
 </body>
 </html>

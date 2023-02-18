@@ -1,5 +1,6 @@
 from django.db import models
 from .config import *
+from datetime import datetime
 
 
 class UserInfo(models.Model):
@@ -21,7 +22,7 @@ class UserInfo(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     has_logged_in = models.BooleanField(default=False)
     logged_in_at = models.DateTimeField(auto_now=True)
-    logged_in_ip = models.GenericIPAddressField()
+    logged_in_ip = models.GenericIPAddressField(default='0.0.0.0') 
     
     # verification
     has_email_verified = models.BooleanField(default=False)

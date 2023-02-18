@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WildCash</title>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+</head>
+<body>
+    {% if prelog %}
+        <p>{{ prelog }}</p>
+    {% endif %}
+    <p> Redirecting you to the log in page... </p>
+    <meta http-equiv="refresh" content="3; url={% url 'wildcash:login' %}" />
+</body>
+</html>
+
